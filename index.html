@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataCrackers - Cifrado César</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <i class="fas fa-lock"></i>
+                <span>DataCrackers</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cifrar">Cifrar</a></li>
+                <li><a href="#aprender">Aprender</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Pantalla de Bienvenida -->
+    <section id="bienvenida" class="screen active">
+        <div class="container">
+            <div class="welcome-card">
+                <div class="welcome-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h1>Bienvenido al Cifrado César</h1>
+                <p>Ingresa tu nombre para comenzar esta experiencia interactiva de criptografía</p>
+                <div class="input-group">
+                    <input type="text" id="nombreUsuario" placeholder="Escribe tu nombre aquí..." class="input-modern">
+                    <button id="btnComenzar" class="btn-primary">
+                        <i class="fas fa-play"></i>
+                        Comenzar Experiencia
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pantalla Principal -->
+    <section id="principal" class="screen">
+        <div class="container">
+            <div class="app-header">
+                <h1 id="saludoPersonalizado">Hola, <span id="nombreDisplay"></span></h1>
+                <p>Experimenta con el cifrado César clásico</p>
+            </div>
+
+            <div class="app-container">
+                <div class="input-section">
+                    <div class="form-group">
+                        <label for="textoInput">
+                            <i class="fas fa-font"></i>
+                            Texto a procesar
+                        </label>
+                        <textarea id="textoInput" placeholder="Escribe tu texto aquí... Ejemplo: hola curso" class="input-modern"></textarea>
+                    </div>
+
+                    <div class="controls-group">
+                        <div class="control-item">
+                            <label for="desplazamientoInput">
+                                <i class="fas fa-arrows-alt-h"></i>
+                                Desplazamiento
+                            </label>
+                            <div class="range-container">
+                                <input type="range" id="desplazamientoRange" min="-26" max="26" value="3" class="slider">
+                                <input type="number" id="desplazamientoInput" value="3" min="-26" max="26" class="input-number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="btnCifrar" class="btn-success">
+                            <i class="fas fa-lock"></i>
+                            Cifrar
+                        </button>
+                        <button id="btnDescifrar" class="btn-info">
+                            <i class="fas fa-lock-open"></i>
+                            Descifrar
+                        </button>
+                        <button id="btnLimpiar" class="btn-secondary">
+                            <i class="fas fa-broom"></i>
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <div class="result-card">
+                        <h3>
+                            <i class="fas fa-result"></i>
+                            Resultado
+                        </h3>
+                        <div id="resultadoOutput" class="result-output"></div>
+                    </div>
+
+                    <div class="explanation-card">
+                        <h3>
+                            <i class="fas fa-microscope"></i>
+                            Explicación Detallada
+                        </h3>
+                        <div id="explicacionOutput" class="explanation-output"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pantalla de Despedida -->
+    <section id="despedida" class="screen">
+        <div class="container">
+            <div class="farewell-card">
+                <div class="farewell-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1 id="mensajeDespedida"></h1>
+                <div class="farewell-content">
+                    <p>Ahora sabes que todos tus mensajes podrían estar cifrados usando esta lógica milenaria.</p>
+                    <p>Cada vez que envíes un mensaje secreto, recuerda el cifrado César.</p>
+                </div>
+                <div class="action-buttons">
+                    <button id="btnNuevoIntento" class="btn-primary">
+                        <i class="fas fa-redo"></i>
+                        Probar otro mensaje
+                    </button>
+                    <button id="btnReiniciar" class="btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Volver al Inicio
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 DataCrackers. Desarrollado por Juan David Uscamayta Ramos</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cesar.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
